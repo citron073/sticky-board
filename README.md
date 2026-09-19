@@ -23,4 +23,12 @@ npm run dev -- --host 127.0.0.1 --port 5174
 
 ## GitHub Pages
 
+公開URL：<https://citron073.github.io/sticky-board/>
+
 ビルド済みの`gh-pages`ブランチをGitHub Pagesの公開元にする。公開版も付箋データは各利用者のブラウザ内にだけ保存される。
+
+ソースを更新したときは、`main`へpushした後に次を実行する。
+
+```bash
+./scripts/deploy-pages.sh
+```
