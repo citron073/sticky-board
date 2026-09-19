@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ブラウザに保存できる付箋ボードアプリ" />
+    <title>Sticky Board | 付箋ボード</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">EP14–19 / VANILLA JAVASCRIPT</p>
+          <h1>付箋ボード</h1>
+        </div>
+        <div class="header-actions">
+          <span id="saveStatus" class="save-status" aria-live="polite">このブラウザに保存</span>
+          <button id="addNoteButton" class="button button-primary" type="button">＋ 付箋を追加</button>
+        </div>
+      </header>
+
+      <section class="guide" aria-label="操作説明">
+        <span><b>1</b> 付箋を追加</span>
+        <span><b>2</b> 本文を入力</span>
+        <span><b>3</b> 上部の持ち手をドラッグ</span>
+        <span><b>4</b> 丸いボタンで色を選択</span>
+      </section>
+
+      <section id="board" class="board" aria-label="付箋ボード">
+        <div id="emptyState" class="empty-state">
+          <p>まだ付箋がありません。</p>
+          <button id="emptyAddButton" class="button" type="button">最初の付箋を作る</button>
+        </div>
+      </section>
+    </main>
+    <template id="noteTemplate">
+      <article class="note" aria-label="付箋">
+        <header class="note-header">
+          <button class="drag-handle" type="button" aria-label="付箋を移動" title="ここをドラッグして移動">⋮⋮</button>
+          <span class="note-label">MEMO</span>
+          <div class="color-picker" role="group" aria-label="付箋の色を選ぶ">
+            <button class="color-choice" type="button" data-color="yellow" aria-label="黄色に変更" title="黄色に変更"></button>
+            <button class="color-choice" type="button" data-color="blue" aria-label="水色に変更" title="水色に変更"></button>
+            <button class="color-choice" type="button" data-color="pink" aria-label="ピンクに変更" title="ピンクに変更"></button>
+            <button class="color-choice" type="button" data-color="green" aria-label="緑色に変更" title="緑色に変更"></button>
+          </div>
+          <button class="delete-button" type="button" aria-label="付箋を削除" title="付箋を削除">×</button>
+        </header>
+        <textarea class="note-text" aria-label="付箋の内容" placeholder="ここにメモを書く"></textarea>
+      </article>
+    </template>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
